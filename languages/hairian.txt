@@ -1,0 +1,14 @@
+L: p t k m n ŋ f s x d b g l r
+F: Lʃ
+C: Fʈɖɓɗʂʒɣ
+V: a e i o u ə ai
+
+V
+CV
+CVC
+LLV
+LLVC
+LLVLL
+CVLL
+VLL
+VC

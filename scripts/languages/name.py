@@ -12,7 +12,10 @@ def get_next_syllable(lang: str) -> str:
             else:
                 groups[line[:line.find(':')]] = []
                 for c in line[line.find(':')+1:].lstrip():
-                    groups[line[:line.find(':')]] += groups[c]
+                    if c.isupper():
+                        groups[line[:line.find(':')]] += groups[c]
+                    else:
+                        groups[line[:line.find(':')]].append(c)
         elif len(line) > 0:
             types.append(line)
     doutput = types[random.randint(0, len(types) - 1)]
@@ -33,7 +36,11 @@ def create_name(lang: str) -> str:
 
 if __name__ == '__main__':
     try:
-        for _ in range(100):
-            print(create_name('stuffumanic'))
+        for _ in range(10):
+            print(create_name('hairian'))
     except KeyError as e:
         print(f'Group {e} not found')
+    except FileNotFoundError as e:
+        print(f'File not found: {e.filename}')
+    except ValueError:
+        print('Empty file found')
