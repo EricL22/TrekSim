@@ -1,10 +1,10 @@
 import random
 from scripts.shared import read_lines_from_file
 
-def get_next_syllable() -> str:
+def get_next_syllable(lang: str) -> str:
     groups = {}
     types = []
-    file_lines = read_lines_from_file('../../languages/stuffumanic.txt')
+    file_lines = read_lines_from_file(f'../../languages/{lang}.txt')
     for line in file_lines:
         if line.find(':') > -1:
             if len(line[line.find(':')+1:].lstrip().split(' ')) > 1:
@@ -24,15 +24,16 @@ def get_next_syllable() -> str:
             output += c
     return output
 
-def create_name() -> str:
+def create_name(lang: str) -> str:
     output = ''
     num_syllables = random.randint(1, 3)
     for i in range(num_syllables):
-        try:
-            output += get_next_syllable()
-        except KeyError:
-            return 'Group not found'
+        output += get_next_syllable(lang)
     return output[0].upper() + output[1:]
 
 if __name__ == '__main__':
-    print(create_name())
+    try:
+        for _ in range(100):
+            print(create_name('stuffumanic'))
+    except KeyError as e:
+        print(f'Group {e} not found')
