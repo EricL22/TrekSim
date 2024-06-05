@@ -1,0 +1,8 @@
+M: s t f m n sh l p b k
+N: m n
+C: MN
+V: a o æ u i e
+
+V
+CV
+CVN
