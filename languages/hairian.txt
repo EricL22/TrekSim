@@ -1,14 +1,15 @@
-L: p t k m n ŋ f s x d b g l r
-F: Lʃ
+I: pl pr tl tr kl kr bl br dl dr gl gr fl fr sl sr ml mr nl nr ŋl ŋr fn pn tn kn
+L: lp lt lk ld lb lg rp rt rk rd rb rg lf ls lx rf rs rx mp nt ŋk nd mb ŋg ns ŋs mf lm rn nm ŋm ŋr
+F: p t k m n ŋ f s x d b g l r ʃ
 C: Fʈɖɓɗʂʒɣ
 V: a e i o u ə ai
 
 V
 CV
-CVC
-LLV
-LLVC
-LLVLL
-CVLL
-VLL
-VC
+CVF
+VF
+IV
+IVF
+IVL
+CVL
+VL

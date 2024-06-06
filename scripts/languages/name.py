@@ -7,15 +7,18 @@ def get_next_syllable(lang: str) -> str:
     file_lines = read_lines_from_file(f'../../languages/{lang}.txt')
     for line in file_lines:
         if line.find(':') > -1:
-            if len(line[line.find(':')+1:].lstrip().split(' ')) > 1:
-                groups[line[:line.find(':')]] = line[line.find(':')+1:].lstrip().split(' ')
+            if line.find(':') == 1:
+                if len(line[2:].lstrip().split(' ')) > 1:
+                    groups[line[0]] = line[2:].lstrip().split(' ')
+                else:
+                    groups[line[0]] = []
+                    for c in line[2:].lstrip():
+                        if c.isupper():
+                            groups[line[0]] += groups[c]
+                        else:
+                            groups[line[0]].append(c)
             else:
-                groups[line[:line.find(':')]] = []
-                for c in line[line.find(':')+1:].lstrip():
-                    if c.isupper():
-                        groups[line[:line.find(':')]] += groups[c]
-                    else:
-                        groups[line[:line.find(':')]].append(c)
+                raise ValueError('Invalid group definition: ' + line[:line.find(':')])
         elif len(line) > 0:
             types.append(line)
     doutput = types[random.randint(0, len(types) - 1)]
@@ -42,5 +45,5 @@ if __name__ == '__main__':
         print(f'Group {e} not found')
     except FileNotFoundError as e:
         print(f'File not found: {e.filename}')
-    except ValueError:
-        print('Empty file found')
+    except ValueError as e:
+        print(e)
