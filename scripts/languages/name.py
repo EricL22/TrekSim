@@ -32,7 +32,7 @@ def get_next_syllable(lang: str) -> str:
 
 def create_name(lang: str) -> str:
     output = ''
-    num_syllables = random.randint(1, 3)
+    num_syllables = 3#random.randint(1, 3)
     for i in range(num_syllables):
         output += get_next_syllable(lang)
     return output[0].upper() + output[1:]
@@ -40,7 +40,7 @@ def create_name(lang: str) -> str:
 if __name__ == '__main__':
     try:
         for _ in range(10):
-            print(create_name('hairian'))
+            print(create_name('gothic'))
     except KeyError as e:
         print(f'Group {e} not found')
     except FileNotFoundError as e:

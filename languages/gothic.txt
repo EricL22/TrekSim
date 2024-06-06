@@ -1,0 +1,20 @@
+I: pl pr tr kl kr bl br gl gr fl fr sp st sk sl sr sm sn spl spr str skr
+F: m n s
+C: b d f g k l m n p r s t v
+V: a a a e i o u
+
+V
+V
+CV
+CV
+CV
+CV
+CV
+CV
+CV
+CV
+IV
+IVF
+CVC
+VC
+jV
